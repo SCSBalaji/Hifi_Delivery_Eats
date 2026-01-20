@@ -1,17 +1,48 @@
-click==8.1.3
-Flask==2.3.2
-itsdangerous==2.1.2
-Jinja2==3.1.5
-MarkupSafe==2.1.3
-Werkzeug==3.0.6
-flask-mail==0.9.1
-authlib==1.3.1
-python-dotenv==0.21.0
-bcrypt==3.2.0
-matplotlib==3.5.1
-seaborn==0.11.2
-pandas==1.3.5
-reportlab==3.6.12
-requests==2.32.2
-gunicorn==22.0.0
+# Flask and core dependencies
+click>=8.1.0
+Flask>=2.3.0
+itsdangerous>=2.1.0
+Jinja2>=3.1.0
+MarkupSafe>=2.1.0
+Werkzeug>=3.0.0
 
+# Authentication and security
+flask-mail>=0.9.1
+authlib>=1.3.0
+python-dotenv>=0.21.0
+bcrypt>=4.0.0
+PyJWT>=2.8.0
+
+# Data processing and visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+pandas>=2.0.0
+numpy>=1.24.0
+plotly>=5.15.0
+scikit-learn>=1.3.0
+
+# PDF generation
+reportlab>=3.6.0
+fpdf>=1.7.2
+
+# HTTP and API
+requests>=2.31.0
+
+# NLP
+textblob>=0.17.1
+nltk>=3.8.0
+
+# Background tasks
+APScheduler>=3.10.0
+
+# Production server
+gunicorn>=22.0.0
+
+# Date utilities
+python-dateutil>=2.8.0
+
+# Database driver for potential PostgreSQL migration
+# psycopg2-binary>=2.9.0  # Uncomment for PostgreSQL
+
+# Job library for ML models
+joblib>=1.3.0

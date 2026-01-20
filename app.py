@@ -30,7 +30,6 @@ import tempfile
 from datetime import datetime, timedelta
 from textblob import TextBlob
 import re
-import streamlit as st
 import plotly.graph_objs as go
 import plotly.io as pio
 from functools import wraps
@@ -42,10 +41,11 @@ import numpy as np
 load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__, static_folder='static')
-app.secret_key = 'supersecretkey'
+# Use environment variable for secret key in production, fallback for development
+app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE = os.path.join(BASE_DIR, 'existing_database.db')
-JWT_SECRET = 'your_jwt_secret'  # Add a secret key for JWT
+JWT_SECRET = os.environ.get('JWT_SECRET', 'your_jwt_secret')  # Use env variable for JWT secret
 UPLOAD_FOLDER = 'static/uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
