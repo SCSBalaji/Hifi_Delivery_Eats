@@ -1,0 +1,32 @@
+# Netlify Configuration File
+# Note: This Flask application requires a Python backend server.
+# Netlify is designed for static sites and cannot run Python/Flask directly.
+# 
+# RECOMMENDED APPROACH:
+# 1. Deploy the backend on Render.com, Heroku, or Railway (see DEPLOYMENT.md)
+# 2. If you only need to serve static files, configure as below
+#
+# For static-only deployment (not recommended for this full-stack app):
+
+[build]
+  # No build command needed for static files
+  publish = "static"
+
+# Redirect all requests to your backend service
+# Uncomment and update the URL after deploying your backend
+# [[redirects]]
+#   from = "/*"
+#   to = "https://your-render-backend-url.onrender.com/:splat"
+#   status = 200
+#   force = true
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+
+# NOTE: For full deployment of this Flask application, 
+# please see DEPLOYMENT.md for instructions on deploying to Render.com
