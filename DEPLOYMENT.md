@@ -6,16 +6,17 @@ This guide provides complete instructions for deploying the HiFi Delivery Eats a
 
 1. [Project Overview](#project-overview)
 2. [Prerequisites](#prerequisites)
-3. [Deployment Options](#deployment-options)
-4. [Option A: Deploy on Render.com (Recommended)](#option-a-deploy-on-rendercom-recommended)
-5. [Option B: Deploy on Heroku](#option-b-deploy-on-heroku)
-6. [Option C: Deploy on Railway](#option-c-deploy-on-railway)
-7. [Environment Variables](#environment-variables)
-8. [Database Setup](#database-setup)
-9. [Email Configuration](#email-configuration)
-10. [OAuth Setup (Optional)](#oauth-setup-optional)
-11. [Post-Deployment Testing](#post-deployment-testing)
-12. [Troubleshooting](#troubleshooting)
+3. [Branch Setup (Important)](#branch-setup-important)
+4. [Deployment Options](#deployment-options)
+5. [Option A: Deploy on Render.com (Recommended)](#option-a-deploy-on-rendercom-recommended)
+6. [Option B: Deploy on Heroku](#option-b-deploy-on-heroku)
+7. [Option C: Deploy on Railway](#option-c-deploy-on-railway)
+8. [Environment Variables](#environment-variables)
+9. [Database Setup](#database-setup)
+10. [Email Configuration](#email-configuration)
+11. [OAuth Setup (Optional)](#oauth-setup-optional)
+12. [Post-Deployment Testing](#post-deployment-testing)
+13. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -48,6 +49,30 @@ Before deploying, ensure you have:
 5. **(Optional) Facebook/Twitter developer accounts** for social login
 
 ---
+
+## Branch Setup (Important)
+
+For deployment, it's recommended to create a dedicated `deploy` branch:
+
+### Create Deploy Branch
+
+```bash
+# Clone the repository (if you haven't already)
+git clone https://github.com/SCSBalaji/Hifi_Delivery_Eats.git
+cd Hifi_Delivery_Eats
+
+# Create and switch to the deploy branch
+git checkout -b deploy
+
+# Push the deploy branch to GitHub
+git push -u origin deploy
+```
+
+### Use Deploy Branch for Hosting
+
+When setting up your hosting platform (Render, Heroku, Railway):
+- Select the `deploy` branch instead of `main`
+- This allows you to keep production-specific changes separate from development
 
 ## Deployment Options
 
